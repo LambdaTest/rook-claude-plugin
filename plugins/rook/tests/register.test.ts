@@ -566,7 +566,7 @@ describe('6 · /rook', () => {
     const text = (await $.command.run(command('status'))).text
 
     expect(text).toContain('✗ rook not found')
-    expect(text).toContain('Next: install it with `! brew install lambdatest/rook/rook`')
+    expect(text).toContain('Next: install it with `! npm install -g @testmuai/rook`')
     expect(world.invocations).toEqual([])
   })
 })

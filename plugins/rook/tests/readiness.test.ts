@@ -106,7 +106,7 @@ describe('readiness', () => {
     const disk = await diskFacts(ioOver(workspace()))
 
     expect(readinessOf(disk, {}).next).toBeUndefined()
-    expect(readinessOf(disk, { version: null }).next).toBe('install it with `! brew install lambdatest/rook/rook`, or set rookPath in /config')
+    expect(readinessOf(disk, { version: null }).next).toBe('install it with `! npm install -g @testmuai/rook` (any OS) or `! brew install lambdatest/rook/rook`, or set rookPath in /config')
     expect(blockedText(readinessOf(disk, { version: '0.1.0', auth: 'out' }), NEEDS.status, 'read status')).toBe(
       "can't read status yet: not signed in. Next: run `! rook login` (it opens a browser).",
     )
