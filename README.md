@@ -175,7 +175,7 @@ claude plugin test .       # logic, pane and bar on terminal and desktop, tools,
 
 See [`plugins/rook/README.md`](plugins/rook/README.md) for how the plugin reads rook's files and what the production guard checks.
 
-**Where changes go.** Open pull requests against [`4DvAnCeBoY/rook-claude-plugin`](https://github.com/4DvAnCeBoY/rook-claude-plugin). [`LambdaTest/rook-claude-plugin`](https://github.com/LambdaTest/rook-claude-plugin), the repository the Claude plugin directory follows, pulls its `main` every 30 minutes (`.github/workflows/sync-upstream.yml`); run that workflow by hand to sync at once. Raise `version` in `plugin.json` with every release.
+**Where changes go.** Open pull requests against [`LambdaTest/rook-claude-plugin`](https://github.com/LambdaTest/rook-claude-plugin). Merging to `main` publishes the plugin, and `main` needs one approving review. Raise `version` in `plugins/rook/.claude-plugin/plugin.json` with every change users should get: Claude Code caches the plugin by version, so a change merged without a bump never reaches existing installs.
 
 ## License
 
