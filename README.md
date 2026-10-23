@@ -1,6 +1,23 @@
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset=".github/assets/rook-mascot-dark.gif">
+  <img src=".github/assets/rook-mascot-light.gif" alt="rook, the chess-piece mascot" width="150">
+</picture>
+
 # rook for Claude Code
 
 **Claude builds your agent. rook tests it. Same terminal.**
+
+[![rook](https://img.shields.io/npm/v/@testmuai/rook?label=rook&color=cb3837)](https://www.npmjs.com/package/@testmuai/rook)
+[![Claude Code plugin](https://img.shields.io/badge/Claude%20Code-plugin-d97757)](#install)
+[![License](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
+
+[Install](#install) · [Getting started](docs/getting-started.md) · [User guide](docs/user-guide.md) · [rook CLI](https://github.com/LambdaTest/rook) · [Documentation](https://www.testmuai.com/support/docs/agent-assurance-overview/?utm_source=github&utm_medium=listing&utm_campaign=marketplace)
+
+<sub>Built by <a href="https://www.testmuai.com/agent-assurance/?utm_source=github&utm_medium=listing&utm_campaign=marketplace">TestMu AI</a> (formerly LambdaTest)</sub>
+
+</div>
 
 A Claude Code plugin for [rook](https://github.com/LambdaTest/rook), TestMu AI's agent-assurance CLI. While Claude writes or changes your AI agent, this plugin lets Claude set rook up, run rook's scenarios against the agent, read the verdicts and the evidence, and fix what failed. You watch the results in a live pane.
 
