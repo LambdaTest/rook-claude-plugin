@@ -1,6 +1,6 @@
 {
   "name": "rook",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "rook by TestMu AI inside Claude Code: Claude runs rook against the agent it is building and gets failures back grouped into root-cause clusters with rook's remedies, writes scenarios, a live pane with per-scenario lanes and openable failures, re-test prompts after agent edits, a status line score, /rook commands and a production-target guard.",
   "author": {
     "name": "TestMu AI (formerly LambdaTest)"
