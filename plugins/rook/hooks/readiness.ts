@@ -119,7 +119,7 @@ export function readinessOf(disk: DiskFacts, cli: CliFacts): RookReadiness {
   const isProject = disk.projectId !== undefined && (cli.projectRefused === undefined || cli.projectRefused !== disk.settingsText)
   const steps: RookReadyStep[] = [
     cli.version === null
-      ? { id: 'installed', label: 'rook not found', ok: false, hint: 'install it with `! brew install lambdatest/rook/rook`, or set rookPath in /config' }
+      ? { id: 'installed', label: 'rook not found', ok: false, hint: 'install it with `! npm install -g @testmuai/rook` (any OS) or `! brew install lambdatest/rook/rook`, or set rookPath in /config' }
       : { id: 'installed', label: cli.version ? `rook ${cli.version}` : 'rook installed', ok: true },
     cli.auth === 'out'
       ? { id: 'signed_in', label: 'not signed in', ok: false, hint: 'run `! rook login` (it opens a browser)' }

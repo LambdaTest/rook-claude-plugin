@@ -209,7 +209,7 @@ export function syncArgs(agent?: unknown): { argv: string[] } | { error: string 
 
 export const SYNC_NOTE =
   'explore and generate write on disk only; rook sync records the project upstream (every agent: features, scenarios, profiles) as one write. ' +
-  'It calls no model and not the agent: no credits.'
+  'It calls no model and not the agent: no credits. It needs a plan with Rook cloud; on Starter rook refuses it and runs stay on this machine.'
 
 /** What `rook sync` printed, in a few lines: the summary first. */
 export function syncText(exitCode: number, stdout: string, stderr: string): string {

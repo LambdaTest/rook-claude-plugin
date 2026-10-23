@@ -336,7 +336,7 @@ const USAGE = [
   '/rook compare [base] [head]  what changed between two runs, per scenario (default: the two newest finished runs)',
   '/rook flaky SC-001 [N]   re-run one scenario N times in a row (default 3, 2-10) and say whether the verdicts disagree',
   '          (spends credits each run)',
-  '/rook sync            record this project upstream (rook sync): every agent, one write. No credits',
+  '/rook sync            record this project upstream (rook sync): every agent, one write. No credits; needs a plan with Rook cloud',
   '/rook budget [<credits>|off|status]   cap what runs and generates may spend this session',
   '/rook ci [write] [--force] [--strict]   preview (or write) .github/workflows/rook.yml: rook as a pull-request check',
   '/rook ui              open the on-disk results viewer (rook ui --local)',
@@ -4017,7 +4017,8 @@ export const register: Register = (on, options) => {
         'Record this rook project upstream (rook sync): every agent\'s features, scenarios and profiles as one write, or one agent with `agent`. ' +
         'explore and generate write on disk only, and a run needs what it tests recorded, so sync after them when rook says the tree is not recorded. ' +
         'Returns what was recorded and where each agent now stands. With check: true it only reports the sync state (rook status) and writes nothing. ' +
-        'No credits: it calls no model and not the agent.',
+        'No credits: it calls no model and not the agent. ' +
+        'It needs an Agent Assurance plan with Rook cloud: on one without, such as Starter, rook refuses it (upgrade_plan) with an upgrade link and a run goes on this machine only, so pass the link on rather than retrying.',
       inputSchema: {
         type: 'object',
         additionalProperties: false,
