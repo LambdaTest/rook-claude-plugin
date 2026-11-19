@@ -13,7 +13,7 @@
 [![Claude Code plugin](https://img.shields.io/badge/Claude%20Code-plugin-d97757)](#install)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
 
-[Install](#install) · [Getting started](docs/getting-started.md) · [User guide](docs/user-guide.md) · [rook CLI](https://github.com/LambdaTest/rook) · [Documentation](https://www.testmuai.com/support/docs/agent-assurance-overview/?utm_source=github&utm_medium=listing&utm_campaign=marketplace)
+[Install](#install) · [Codex](#codex) · [Getting started](docs/getting-started.md) · [User guide](docs/user-guide.md) · [rook CLI](https://github.com/LambdaTest/rook) · [Documentation](https://www.testmuai.com/support/docs/agent-assurance-overview/?utm_source=github&utm_medium=listing&utm_campaign=marketplace)
 
 <sub>Built by <a href="https://www.testmuai.com/agent-assurance/?utm_source=github&utm_medium=listing&utm_campaign=marketplace">TestMu AI</a> (formerly LambdaTest)</sub>
 
@@ -165,6 +165,18 @@ Change them in `/config`, or under `pluginConfigs.rook` in your settings file.
 | `prodPatterns` | `prod,production,live` | Whole words that mark a target as production |
 | `allowRules` | *(empty)* | rook tool-call approvals, separated by `;`, e.g. `bash(npm test); bash(git *)@explore`. Empty means `--yes` |
 
+## Codex
+
+This repository is also a Codex plugin marketplace. The Codex plugin in [`codex/rook`](codex/rook) carries the [rook skill](https://github.com/LambdaTest/rook#for-ai-coding-agents-reading-this): Codex runs the rook CLI to discover your agent, generate scenarios, run them and read the verdicts. The live pane, re-test prompt and status line are Claude Code features and are not part of it. The [requirements](#requirements) above still apply.
+
+```bash
+codex plugin marketplace add LambdaTest/rook-plugin
+```
+
+Then install it with `codex plugin add rook@rook-plugin` (or from `/plugins` inside Codex) and start a new session. To update, run `codex plugin marketplace upgrade rook-plugin`.
+
+If you installed the skill with `npx @testmuai/rook-skill --agent codex`, Codex lists two copies, `rook` and `rook:rook`. Keep one: `npx @testmuai/rook-skill uninstall --agent codex` removes the standalone copy.
+
 ## Development
 
 ```bash
@@ -176,6 +188,8 @@ claude plugin test .       # logic, pane and bar on terminal and desktop, tools,
 See [`plugins/rook/README.md`](plugins/rook/README.md) for how the plugin reads rook's files and what the production guard checks.
 
 **Where changes go.** Open pull requests against [`LambdaTest/rook-claude-plugin`](https://github.com/LambdaTest/rook-claude-plugin). Merging to `main` publishes the plugin, and `main` needs one approving review. Raise `version` in `plugins/rook/.claude-plugin/plugin.json` with every change users should get: Claude Code caches the plugin by version, so a change merged without a bump never reaches existing installs.
+
+The Codex plugin's skill is a copy of `skill-installer/skills/` in [`LambdaTest/rook`](https://github.com/LambdaTest/rook); [`codex/skill-source.txt`](codex/skill-source.txt) records the commit. Refresh it with `scripts/sync-codex-skill.sh [ref]` (default `main`), check it with `scripts/sync-codex-skill.sh --check [ref]`, and raise `version` in `codex/rook/.codex-plugin/plugin.json` when it changes: Codex also caches installed plugins by version.
 
 ## License
 

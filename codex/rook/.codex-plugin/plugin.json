@@ -1,0 +1,42 @@
+{
+  "name": "rook",
+  "version": "0.1.0",
+  "description": "Rook by TestMu AI for Codex: test, evaluate, red-team or regression-check an AI agent you own with the Rook CLI, and interpret saved Rook results.",
+  "author": {
+    "name": "TestMu AI (formerly LambdaTest)",
+    "url": "https://www.testmuai.com/"
+  },
+  "homepage": "https://github.com/LambdaTest/rook",
+  "repository": "https://github.com/LambdaTest/rook-plugin",
+  "license": "Apache-2.0",
+  "keywords": [
+    "rook",
+    "testmuai",
+    "agent-testing",
+    "agent-assurance",
+    "evals",
+    "red-team",
+    "regression-testing"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Rook",
+    "shortDescription": "Test and red-team AI agents",
+    "longDescription": "Use Rook by TestMu AI to test, evaluate, red-team or regression-check an AI agent you own. Codex drives the Rook CLI: it discovers the agents in your repository, generates scenarios, runs them against the real agent and reads back verdicts with the evidence. It can also explain saved Rook results. Requires the Rook CLI and a TestMu AI account. Live runs use TestMu AI credits and can reach the agent's real actions: Codex announces credit spend first and gets your authorization before steps with real effects.",
+    "developerName": "TestMu AI",
+    "category": "Developer Tools",
+    "capabilities": ["Read", "Write"],
+    "websiteURL": "https://www.testmuai.com/agent-assurance/",
+    "supportURL": "https://github.com/LambdaTest/rook/issues",
+    "privacyPolicyURL": "https://www.testmuai.com/legal/privacy/",
+    "termsOfServiceURL": "https://www.testmuai.com/legal/terms-of-service/",
+    "defaultPrompt": [
+      "Use rook to test my agent against its refund policy",
+      "Explain the failures in my latest rook run"
+    ],
+    "composerIcon": "./assets/rook.svg",
+    "composerIconDark": "./assets/rook-dark.svg",
+    "logo": "./assets/rook.svg",
+    "logoDark": "./assets/rook-dark.svg"
+  }
+}
