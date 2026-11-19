@@ -18,8 +18,8 @@ This guide covers the two situations you will be in:
    ```
 2. Install the plugin. Inside Claude Code:
    ```
-   /plugin marketplace add LambdaTest/rook-claude-plugin
-   /plugin install rook@rook-claude-plugin
+   /plugin marketplace add LambdaTest/rook-plugin
+   /plugin install rook@rook-plugin
    ```
    Restart Claude Code once.
 3. **Start Claude Code in your agent's repository.** The plugin reads `.testmuai/rook/` from the directory the session starts in, the same way rook does. In a new folder, accept the trust prompt and restart: plugins do not load in untrusted folders.

@@ -45,8 +45,8 @@ It keeps rook's vocabulary. **Unable to Verify is not Fail**: it is counted and 
 From GitHub, inside Claude Code:
 
 ```
-/plugin marketplace add LambdaTest/rook-claude-plugin
-/plugin install rook@rook-claude-plugin
+/plugin marketplace add LambdaTest/rook-plugin
+/plugin install rook@rook-plugin
 ```
 
 Or from a clone, for one session: `claude --plugin-dir <clone>/plugins/rook`.

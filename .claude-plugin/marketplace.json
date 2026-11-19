@@ -1,6 +1,6 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
-  "name": "rook-claude-plugin",
+  "name": "rook-plugin",
   "description": "rook (TestMu AI agent assurance) inside Claude Code",
   "owner": { "name": "TestMu AI (formerly LambdaTest)" },
   "plugins": [
