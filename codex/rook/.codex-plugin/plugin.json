@@ -1,6 +1,6 @@
 {
   "name": "rook",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Rook by TestMu AI for Codex: test, evaluate, red-team or regression-check an AI agent you own with the Rook CLI, and interpret saved Rook results.",
   "author": {
     "name": "TestMu AI (formerly LambdaTest)",
@@ -19,8 +19,9 @@
     "regression-testing"
   ],
   "skills": "./skills/",
+  "requires_local_executor": true,
   "interface": {
-    "displayName": "Rook",
+    "displayName": "Rook by TestMu AI",
     "shortDescription": "Test and red-team AI agents",
     "longDescription": "Use Rook by TestMu AI to test, evaluate, red-team or regression-check an AI agent you own. Codex drives the Rook CLI: it discovers the agents in your repository, generates scenarios, runs them against the real agent and reads back verdicts with the evidence. It can also explain saved Rook results. Requires the Rook CLI and a TestMu AI account. Live runs use TestMu AI credits and can reach the agent's real actions: Codex announces credit spend first and gets your authorization before steps with real effects.",
     "developerName": "TestMu AI",
