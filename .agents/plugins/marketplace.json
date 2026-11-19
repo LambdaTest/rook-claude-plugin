@@ -1,0 +1,21 @@
+{
+  "name": "rook-plugin",
+  "interface": {
+    "displayName": "Rook by TestMu AI"
+  },
+  "plugins": [
+    {
+      "name": "rook",
+      "source": {
+        "source": "local",
+        "path": "./codex/rook"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE",
+        "products": ["CODEX"]
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}
