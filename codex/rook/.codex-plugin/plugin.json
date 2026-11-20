@@ -1,6 +1,6 @@
 {
   "name": "rook",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Rook by TestMu AI for Codex: test, evaluate, red-team or regression-check an AI agent you own with the Rook CLI, and interpret saved Rook results.",
   "author": {
     "name": "TestMu AI (formerly LambdaTest)",
@@ -28,7 +28,7 @@
     "category": "Developer Tools",
     "capabilities": ["Read", "Write"],
     "websiteURL": "https://www.testmuai.com/agent-assurance/",
-    "supportURL": "https://github.com/LambdaTest/rook/issues",
+    "supportURL": "https://www.testmuai.com/contact-us/",
     "privacyPolicyURL": "https://www.testmuai.com/legal/privacy/",
     "termsOfServiceURL": "https://www.testmuai.com/legal/terms-of-service/",
     "defaultPrompt": [
