@@ -5,8 +5,8 @@
   "author": {
     "name": "TestMu AI (formerly LambdaTest)"
   },
-  "homepage": "https://github.com/LambdaTest/rook-claude-plugin",
-  "repository": "https://github.com/LambdaTest/rook-claude-plugin",
+  "homepage": "https://github.com/LambdaTest/rook-plugin",
+  "repository": "https://github.com/LambdaTest/rook-plugin",
   "license": "Apache-2.0",
   "keywords": [
     "rook",

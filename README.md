@@ -5,12 +5,13 @@
   <img src=".github/assets/rook-mascot-light.gif" alt="rook, the chess-piece mascot" width="150">
 </picture>
 
-# rook for Claude Code
+# rook for Claude Code and Codex
 
-**Claude builds your agent. rook tests it. Same terminal.**
+**Claude Code or Codex builds your agent. rook tests it. Same terminal.**
 
 [![rook](https://img.shields.io/npm/v/@testmuai/rook?label=rook&color=cb3837)](https://www.npmjs.com/package/@testmuai/rook)
 [![Claude Code plugin](https://img.shields.io/badge/Claude%20Code-plugin-d97757)](#install)
+[![Codex plugin](https://img.shields.io/badge/Codex-plugin-000000)](#codex)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
 
 [Install](#install) · [Codex](#codex) · [Getting started](docs/getting-started.md) · [User guide](docs/user-guide.md) · [rook CLI](https://github.com/LambdaTest/rook) · [Documentation](https://www.testmuai.com/support/docs/agent-assurance-overview/?utm_source=github&utm_medium=listing&utm_campaign=marketplace)
@@ -19,7 +20,10 @@
 
 </div>
 
-A Claude Code plugin for [rook](https://github.com/LambdaTest/rook), TestMu AI's agent-assurance CLI. While Claude writes or changes your AI agent, this plugin lets Claude set rook up, run rook's scenarios against the agent, read the verdicts and the evidence, and fix what failed. You watch the results in a live pane.
+Plugins for [rook](https://github.com/LambdaTest/rook), TestMu AI's agent-assurance CLI, so the coding agent that writes your AI agent can also test it. This repository holds two:
+
+- **Claude Code** ([`plugins/rook`](plugins/rook)). While Claude writes or changes your AI agent, the plugin lets Claude set rook up, run rook's scenarios against the agent, read the verdicts and the evidence, and fix what failed. You watch the results in a live pane. Most of this README is about this plugin.
+- **Codex** ([`codex/rook`](codex/rook)). The rook skill, so Codex can set rook up, run it and read the verdicts the same way, without the pane. See [Codex](#codex).
 
 [![Watch rook for Claude Code v0.3: the side pane for QEs and developers, in real sessions](docs/media/walkthrough-v3-poster.png)](docs/media/rook-plugin-v3-walkthrough.mp4)
 
@@ -93,24 +97,26 @@ More: [Getting started](docs/getting-started.md) (with screenshots) · [User gui
 Inside Claude Code:
 
 ```
-/plugin marketplace add LambdaTest/rook-claude-plugin
-/plugin install rook@rook-claude-plugin
+/plugin marketplace add LambdaTest/rook-plugin
+/plugin install rook@rook-plugin
 ```
 
 Restart Claude Code once so the plugin loads.
 
+**Installed it before 19 Nov 2026?** This repository was `LambdaTest/rook-claude-plugin` until then. Your install keeps working and updating under its original marketplace name, so type `rook@rook-claude-plugin` where these docs say `rook@rook-plugin`. `/plugin marketplace list` shows which name you have.
+
 ### From a clone
 
 ```bash
-git clone https://github.com/LambdaTest/rook-claude-plugin.git ~/rook-claude-plugin
+git clone https://github.com/LambdaTest/rook-plugin.git ~/rook-plugin
 cd ~/path/to/your-agent-repo
-claude --plugin-dir ~/rook-claude-plugin/plugins/rook
+claude --plugin-dir ~/rook-plugin/plugins/rook
 ```
 
 To load it in every session without the flag, add this to `~/.claude/settings.json`:
 
 ```json
-{ "env": { "CLAUDE_CODE_PLUGIN_DIRS": "~/rook-claude-plugin/plugins/rook" } }
+{ "env": { "CLAUDE_CODE_PLUGIN_DIRS": "~/rook-plugin/plugins/rook" } }
 ```
 
 ## How to use it
@@ -187,10 +193,10 @@ claude plugin test .       # logic, pane and bar on terminal and desktop, tools,
 
 See [`plugins/rook/README.md`](plugins/rook/README.md) for how the plugin reads rook's files and what the production guard checks.
 
-**Where changes go.** Open pull requests against [`LambdaTest/rook-claude-plugin`](https://github.com/LambdaTest/rook-claude-plugin). Merging to `main` publishes the plugin, and `main` needs one approving review. Raise `version` in `plugins/rook/.claude-plugin/plugin.json` with every change users should get: Claude Code caches the plugin by version, so a change merged without a bump never reaches existing installs.
+**Where changes go.** Open pull requests against [`LambdaTest/rook-plugin`](https://github.com/LambdaTest/rook-plugin). Merging to `main` publishes both plugins, and `main` needs one approving review. Raise `version` in `plugins/rook/.claude-plugin/plugin.json` with every change users should get: Claude Code caches the plugin by version, so a change merged without a bump never reaches existing installs.
 
 The Codex plugin's skill is a copy of `skill-installer/skills/` in [`LambdaTest/rook`](https://github.com/LambdaTest/rook); [`codex/skill-source.txt`](codex/skill-source.txt) records the commit. Refresh it with `scripts/sync-codex-skill.sh [ref]` (default `main`), check it with `scripts/sync-codex-skill.sh --check [ref]`, and raise `version` in `codex/rook/.codex-plugin/plugin.json` when it changes: Codex also caches installed plugins by version.
 
 ## License
 
-Apache-2.0, like rook. rook and TestMu AI are trademarks of their owners; this plugin is an independent integration.
+Apache-2.0, like rook. rook and TestMu AI are trademarks of their owners; these plugins are independent integrations.
