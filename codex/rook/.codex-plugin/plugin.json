@@ -1,6 +1,6 @@
 {
   "name": "rook",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Rook by TestMu AI for Codex: test, evaluate, red-team or regression-check an AI agent you own with the Rook CLI, and interpret saved Rook results.",
   "author": {
     "name": "TestMu AI (formerly LambdaTest)",
